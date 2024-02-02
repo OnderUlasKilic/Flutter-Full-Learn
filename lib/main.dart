@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
+      theme: ThemeData.dark(
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 179, 12, 0)),
+        // colorScheme:
+        //     ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 179, 12, 0)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Veli Dayı', money: 15),
@@ -118,11 +118,19 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+      floatingActionButton: TextButton(
+          // FloatingActionButton.extended()
+          onPressed: () {
+            setState(() {
+              _counter = _counter + 1;
+            });
+          },
+          child: const Text("Ekle")),
+      // onPressed: () {
+      //   _counter++;
+      // },
+      // tooltip: 'Increment',
+      // label: Row(children: const [Icon(Icons.add), Text("data")]),
+    ); // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
