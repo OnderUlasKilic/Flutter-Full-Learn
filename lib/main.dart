@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/app_bar.dart';
 import 'package:flutter_full_learn/101/button_learn.dart';
+import 'package:flutter_full_learn/101/color_learn.dart';
+
 import 'package:flutter_full_learn/101/container_sized_box_learn.dart';
 import 'package:flutter_full_learn/101/icon_learn.dart';
 import 'package:flutter_full_learn/101/scaffold_learn.dart';
@@ -21,13 +23,18 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
+          colorScheme: ThemeData.dark().copyWith().colorScheme.copyWith(
+                error: ColorsItems().sulu,
+              ),
+
+          // colorScheme.error: colorsitems.sulu,
           appBarTheme: const AppBarTheme(
-        centerTitle: true,
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        backgroundColor: Colors.red,
-        elevation: 0,
-      )),
-      home: IconLearnView(),
+            centerTitle: true,
+            systemOverlayStyle: SystemUiOverlayStyle.light,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          )),
+      home: ColorLearn(),
     );
   }
 }

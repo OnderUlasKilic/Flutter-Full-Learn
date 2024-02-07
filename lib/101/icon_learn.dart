@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class IconLearnView extends StatelessWidget {
   IconLearnView({super.key});
   final IconSizes iconSize = IconSizes();
+  final IconColors iconColors = IconColors();
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,12 @@ class IconLearnView extends StatelessWidget {
           color: Colors.red,
           iconSize: iconSize.iconSmall,
         ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.message_outlined),
+          color: iconColors.froly,
+          iconSize: iconSize.iconSmall,
+        ),
       ]),
     );
   }
@@ -22,4 +29,8 @@ class IconLearnView extends StatelessWidget {
 
 class IconSizes {
   final double iconSmall = 40;
+}
+
+class IconColors {
+  final Color froly = const Color(0xffED617A);
 }
