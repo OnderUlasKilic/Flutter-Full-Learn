@@ -21,5 +21,5 @@ class ColorLearn extends StatelessWidget {
 
 class ColorsItems {
   final Color porchase = const Color(0xffEDBF61);
-  final Color sulu = const Color.fromARGB(198, 237, 97, 1);
+  final Color sulu = const Color.fromRGBO(198, 237, 97, 1);
 }
