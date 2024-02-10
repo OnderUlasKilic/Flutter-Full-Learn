@@ -7,10 +7,12 @@ import 'package:flutter_full_learn/101/color_learn.dart';
 
 import 'package:flutter_full_learn/101/container_sized_box_learn.dart';
 import 'package:flutter_full_learn/101/icon_learn.dart';
+import 'package:flutter_full_learn/101/image_learn.dart';
 import 'package:flutter_full_learn/101/padding_learn.dart';
 import 'package:flutter_full_learn/101/scaffold_learn.dart';
 import 'package:flutter_full_learn/101/stateless_learn.dart';
 import 'package:flutter_full_learn/101/text_learn_view.dart';
+import 'package:flutter_full_learn/demos/note_demos_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,8 +29,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           cardTheme: CardTheme(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            shape: ProjectMargin.roundedRectangleBorder,
           ),
           colorScheme: ThemeData.dark().copyWith().colorScheme.copyWith(
                 error: ColorsItems().sulu,
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const CardLearn(),
+      home: const NoteDemos(),
     );
   }
 }

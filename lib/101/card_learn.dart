@@ -21,7 +21,7 @@ class CardLearn extends StatelessWidget {
           ),
           Card(
             margin: ProjectMargin.cardMargin,
-            child: SizedBox(
+            child: const SizedBox(
               height: 100,
               width: 300,
               child: Center(child: Text("Ali")),
