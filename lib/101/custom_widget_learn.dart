@@ -1,10 +1,8 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 
-class CustomWidgetLearn extends StatelessWidget with _ColorsUtility {
-  CustomWidgetLearn({super.key});
-  final String title = "Food";
+class CustomWidgetLearn extends StatelessWidget {
+  const CustomWidgetLearn({super.key});
+  static const title = "Food";
 
   @override
   Widget build(BuildContext context) {
@@ -38,35 +36,35 @@ class CustomWidgetLearn extends StatelessWidget with _ColorsUtility {
   }
 }
 
-mixin class _ColorsUtility {
-  final Color red = Colors.red;
-  final Color white = Colors.white;
+final class _ColorsUtility {
+  static const red = Colors.red;
+  static const white = Colors.white;
 }
 
-mixin class _PaddingUtility {
-  final EdgeInsets normalPadding = const EdgeInsets.all(8.0);
-  final EdgeInsets normal2xPadding = const EdgeInsets.all(16.0);
+final class _PaddingUtility {
+  static const EdgeInsets normalPadding = EdgeInsets.all(8.0);
+  static const EdgeInsets normal2xPadding = EdgeInsets.all(16.0);
 }
 
-class CustomFoodButton extends StatelessWidget
-    with _ColorsUtility, _PaddingUtility {
-  CustomFoodButton({super.key, required this.title, required this.onPressed});
+class CustomFoodButton extends StatelessWidget {
+  const CustomFoodButton(
+      {super.key, required this.title, required this.onPressed});
+
   final String title;
   final void Function() onPressed;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          backgroundColor: red, shape: const StadiumBorder()),
+          backgroundColor: _ColorsUtility.red, shape: const StadiumBorder()),
       onPressed: onPressed,
       child: Padding(
-        padding: normal2xPadding,
+        padding: _PaddingUtility.normal2xPadding,
         child: Text(
           title,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(color: white, fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              color: _ColorsUtility.white, fontWeight: FontWeight.bold),
         ),
       ),
     );
