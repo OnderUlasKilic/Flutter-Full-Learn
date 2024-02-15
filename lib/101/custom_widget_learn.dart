@@ -30,6 +30,21 @@ class CustomWidgetLearn extends StatelessWidget {
             title: title,
             onPressed: () {},
           ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: _ColorsUtility.red,
+                shape: const StadiumBorder()),
+            onPressed: () {},
+            child: Padding(
+              padding: _PaddingUtility.normalPadding,
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: _ColorsUtility.white, fontWeight: FontWeight.bold),
+              ),
+            ),
+          )
         ],
       ),
     );
