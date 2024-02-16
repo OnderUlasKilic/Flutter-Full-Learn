@@ -33,8 +33,9 @@ class CustomWidgetLearn extends StatelessWidget {
           const SizedBox(height: 20),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: _ColorsUtility.red,
-                shape: const StadiumBorder()),
+              backgroundColor: _ColorsUtility.red,
+              shape: const StadiumBorder(),
+            ),
             onPressed: () {},
             child: Padding(
               padding: _PaddingUtility.normalPadding,

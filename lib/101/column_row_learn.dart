@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 
 class ColumnRowLearn extends StatelessWidget {
@@ -12,41 +10,60 @@ class ColumnRowLearn extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-              flex: 4,
-              child: Row(
-                children: [
-                  Expanded(child: Container(color: Colors.red)),
-                  Expanded(child: Container(color: Colors.green)),
-                  Expanded(child: Container(color: Colors.yellow)),
-                  Expanded(child: Container(color: Colors.pink)),
-                ],
-              )),
+            flex: 4,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(color: Colors.red),
+                ),
+                Expanded(
+                  child: Container(color: Colors.green),
+                ),
+                Expanded(
+                  child: Container(color: Colors.yellow),
+                ),
+                Expanded(
+                  child: Container(color: Colors.pink),
+                ),
+              ],
+            ),
+          ),
           const Spacer(flex: 2),
           const Expanded(
-              flex: 2,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisSize: MainAxisSize.min,
-                children: [Text("a"), Text("a2"), Text("a3")],
-              )),
+            flex: 2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisSize: MainAxisSize.min,
+              children: [Text("a"), Text("a2"), Text("a3")],
+            ),
+          ),
           const Spacer(flex: 1),
           const SizedBox(
-              height: ProhectContainerSizes.cardHeight,
-              child: Column(
-                children: [
-                  Expanded(child: Text("data")),
-                  Expanded(child: Text("data")),
-                  Expanded(child: Text("data")),
-                  Expanded(child: Text("data")),
-                ],
-              ))
+            height: ProjectContainerSizes.cardHeight,
+            child: Column(
+              children: [
+                Expanded(
+                  child: Text("data"),
+                ),
+                Expanded(
+                  child: Text("data"),
+                ),
+                Expanded(
+                  child: Text("data"),
+                ),
+                Expanded(
+                  child: Text("data"),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
 
-class ProhectContainerSizes {
+class ProjectContainerSizes {
   static const double cardHeight = 200;
 }
