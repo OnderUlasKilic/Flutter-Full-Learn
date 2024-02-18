@@ -10,19 +10,9 @@ class StatefullLearn extends StatefulWidget {
 class _StatefullLearnState extends State<StatefullLearn> {
   int countValue = 0;
 
-  void incrementValue() {
-    setState(
-      () {
-        countValue = countValue + 1;
-      },
-    );
-  }
+  void incrementValue() => setState(() => countValue = countValue + 1);
 
-  void deincrementValue() {
-    setState(() {
-      countValue = countValue - 1;
-    });
-  }
+  void deincrementValue() => setState(() => countValue = countValue - 1);
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +21,20 @@ class _StatefullLearnState extends State<StatefullLearn> {
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _IncrementButton(onPressed: incrementValue),
-          _DeincrementButton(onPressed: deincrementValue),
+          _IncrementButton(
+            onPressed: incrementValue,
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          _DeincrementButton(
+            onPressed: deincrementValue,
+          ),
         ],
       ),
       body: Center(
         child: Text(
-          countValue.toString(),
+          "$countValue",
         ),
       ),
     );
@@ -45,36 +42,36 @@ class _StatefullLearnState extends State<StatefullLearn> {
 }
 
 class _IncrementButton extends StatelessWidget {
-  final VoidCallback onPressed;
-
   const _IncrementButton({
-    super.key,
     required this.onPressed,
   });
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: onPressed,
-      child: const Icon(Icons.add),
+      child: const Icon(
+        Icons.add,
+      ),
     );
   }
 }
 
 class _DeincrementButton extends StatelessWidget {
-  final VoidCallback onPressed;
   const _DeincrementButton({
-    super.key,
     required this.onPressed,
   });
 
+  final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10),
-      child: FloatingActionButton(
-        onPressed: onPressed,
-        child: const Icon(Icons.remove),
+    return FloatingActionButton(
+      onPressed: onPressed,
+      child: const Icon(
+        Icons.remove,
       ),
     );
   }
