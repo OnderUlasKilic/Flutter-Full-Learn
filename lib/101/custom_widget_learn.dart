@@ -45,7 +45,7 @@ class CustomWidgetLearn extends StatelessWidget {
                     color: _ColorsUtility.white, fontWeight: FontWeight.bold),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

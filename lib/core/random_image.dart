@@ -8,6 +8,6 @@ class RandomImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(imageUrl, height: height, fit: BoxFit.cover);
+    return Image.network(imageUrl, height: height, fit: BoxFit.fill);
   }
 }
