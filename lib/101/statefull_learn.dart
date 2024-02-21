@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/product/counter_hello_button.dart';
+import 'package:flutter_full_learn/product/language/language_items.dart';
 
 class StatefullLearn extends StatefulWidget {
   const StatefullLearn({super.key});
@@ -8,16 +10,16 @@ class StatefullLearn extends StatefulWidget {
 }
 
 class _StatefullLearnState extends State<StatefullLearn> {
-  int countValue = 0;
+  int _countValue = 0;
 
-  void incrementValue() => setState(() => countValue = countValue + 1);
+  void incrementValue() => setState(() => _countValue = _countValue + 1);
 
-  void deincrementValue() => setState(() => countValue = countValue - 1);
+  void deincrementValue() => setState(() => _countValue = _countValue - 1);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text(LanguageItems.wellcomeTitle)),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -32,10 +34,17 @@ class _StatefullLearnState extends State<StatefullLearn> {
           ),
         ],
       ),
-      body: Center(
-        child: Text(
-          "$countValue",
-        ),
+      body: Column(
+        children: [
+          Center(
+            child: Text(
+              "$_countValue",
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
+          ),
+          const Placeholder(),
+          const CounterHelloButton(),
+        ],
       ),
     );
   }
@@ -50,6 +59,7 @@ class _IncrementButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("burda");
     return FloatingActionButton(
       onPressed: onPressed,
       child: const Icon(
