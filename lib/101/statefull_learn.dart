@@ -59,7 +59,6 @@ class _IncrementButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("burda");
     return FloatingActionButton(
       onPressed: onPressed,
       child: const Icon(

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 import 'package:flutter_full_learn/101/icon_learn.dart';
 import 'package:flutter_full_learn/101/image_learn.dart';
@@ -15,11 +13,11 @@ class PageViewLearn extends StatefulWidget {
 class _PageViewLearnState extends State<PageViewLearn> {
   final _pageController = PageController(viewportFraction: .7);
 
-  int _correntPageIndex = 0;
+  int _currentPageIndex = 0;
 
   void _updatePageIndex(int index) {
     setState(() {
-      _correntPageIndex = index;
+      _currentPageIndex = index;
     });
   }
 
@@ -27,12 +25,12 @@ class _PageViewLearnState extends State<PageViewLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: Row(
-        // mainAxisSize: MainAxisSize.min,
-
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 25),
-            child: Text(_correntPageIndex.toString()),
+            child: Text(
+              _currentPageIndex.toString(),
+            ),
           ),
           const Spacer(),
           FloatingActionButton(
