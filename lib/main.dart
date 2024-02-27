@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const StatefullLifeCycleLearn(message: "Velibb"),
+      home: const StatelessLearn(),
     );
   }
 }

@@ -15,12 +15,36 @@ class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
   late final bool _isOdd;
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print("c");
+  }
+
+  @override
+  void didUpdateWidget(covariant StatefullLifeCycleLearn oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.message != widget.message) {
+      _message = widget.message;
+      _computeName();
+      setState(() {});
+    }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _message = "";
+  }
+
+  @override
   void initState() {
     super.initState();
     _message = widget.message;
     _isOdd = widget.message.length.isOdd;
 
     _computeName();
+    print("a");
   }
 
   void _computeName() {
@@ -35,7 +59,7 @@ class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_isOdd ? "Kelime tek" : "Kelime çift"),
+        title: Text(_isOdd ? "Kelime çift" : "Kelime Tek"),
       ),
       body: _isOdd
           ? TextButton(
