@@ -11,7 +11,7 @@ class StatefullLifeCycleLearn extends StatefulWidget {
 }
 
 class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
-  String _message = " ";
+  late String _message;
   late final bool _isOdd;
 
   @override
@@ -35,7 +35,7 @@ class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: _isOdd ? const Text("Kelime tek") : const Text("Kelime çift"),
+        title: Text(_isOdd ? "Kelime tek" : "Kelime çift"),
       ),
       body: _isOdd
           ? TextButton(
