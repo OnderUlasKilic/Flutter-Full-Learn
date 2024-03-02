@@ -22,10 +22,10 @@ class ContainerSizedBoxLearn extends StatelessWidget {
           Container(
             constraints: const BoxConstraints(
                 maxWidth: 200, minWidth: 100, minHeight: 10, maxHeight: 120),
-            child: Text("aa" * 100, maxLines: 2),
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             decoration: ProjectUtility.boxDecoration,
+            child: Text("aa" * 100, maxLines: 2),
           )
         ],
       ),
@@ -38,7 +38,7 @@ class ProjectUtility {
       borderRadius: BorderRadius.circular(10),
       gradient: const LinearGradient(colors: [Colors.red, Colors.black]),
       color: Colors.red,
-      boxShadow: [
+      boxShadow: const [
         BoxShadow(color: Colors.green, offset: Offset(0.1, 1), blurRadius: 12)
       ],
       border: Border.all(width: 10, color: Colors.white12));
@@ -51,7 +51,7 @@ class ProjectContainerDecoration extends BoxDecoration {
             gradient: const LinearGradient(colors: [Colors.red, Colors.black]),
             color: Colors.red,
             boxShadow: [
-              BoxShadow(
+              const BoxShadow(
                   color: Colors.green, offset: Offset(0.1, 1), blurRadius: 12)
             ],
             border: Border.all(width: 10, color: Colors.white12));

@@ -9,7 +9,7 @@ class StatelessLearn extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         body: Column(children: [
-          TitleTextWidget(text: "${veli}"),
+          TitleTextWidget(text: veli),
           const _emptyBox(),
           const TitleTextWidget(text: "veli2"),
           const _emptyBox(),
@@ -25,9 +25,7 @@ class StatelessLearn extends StatelessWidget {
 }
 
 class _emptyBox extends StatelessWidget {
-  const _emptyBox({
-    super.key,
-  });
+  const _emptyBox();
 
   @override
   Widget build(BuildContext context) {

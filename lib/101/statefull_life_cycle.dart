@@ -49,9 +49,9 @@ class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
 
   void _computeName() {
     if (_isOdd) {
-      _message += " Çift";
-    } else {
       _message += " Tek";
+    } else {
+      _message += " Çift";
     }
   }
 
@@ -59,7 +59,7 @@ class _StatefullLifeCycleLearnState extends State<StatefullLifeCycleLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_isOdd ? "Kelime çift" : "Kelime Tek"),
+        title: Text(_isOdd ? "Kelime Tek" : "Kelime Çift"),
       ),
       body: _isOdd
           ? TextButton(
