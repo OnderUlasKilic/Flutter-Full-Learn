@@ -41,9 +41,7 @@ class StackDemoView extends StatelessWidget {
 }
 
 class _CardCustom extends StatelessWidget {
-  const _CardCustom({
-    super.key,
-  });
+  const _CardCustom();
 
   @override
   Widget build(BuildContext context) {

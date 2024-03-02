@@ -10,7 +10,6 @@ class ButtonLearn extends StatelessWidget {
       body: Column(
         children: [
           TextButton(
-            child: Text("Save", style: Theme.of(context).textTheme.titleMedium),
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.resolveWith((states) {
               if (states.contains(MaterialState.pressed)) {
@@ -22,8 +21,9 @@ class ButtonLearn extends StatelessWidget {
               // serise istek at
               // sayfanın rengini düzenle
             },
+            child: Text("Save", style: Theme.of(context).textTheme.titleMedium),
           ),
-          ElevatedButton(onPressed: null, child: const Text("data")),
+          const ElevatedButton(onPressed: null, child: Text("data")),
           IconButton(onPressed: () {}, icon: const Icon(Icons.add_rounded)),
           FloatingActionButton(
             onPressed: () {},
@@ -43,7 +43,7 @@ class ButtonLearn extends StatelessWidget {
           ),
           InkWell(
             onTap: () {},
-            child: Text("custom"),
+            child: const Text("custom"),
           ),
           Container(
             height: 200,

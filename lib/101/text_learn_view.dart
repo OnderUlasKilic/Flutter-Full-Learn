@@ -19,7 +19,7 @@ class TextLearnView extends StatelessWidget {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.right,
-            style: TextStyle(
+            style: const TextStyle(
                 wordSpacing: 2,
                 decoration: TextDecoration.underline,
                 fontStyle: FontStyle.italic,
@@ -54,7 +54,7 @@ class TextLearnView extends StatelessWidget {
 }
 
 class ProjectStyles {
-  static TextStyle wellcomeStyle = TextStyle(
+  static TextStyle wellcomeStyle = const TextStyle(
       wordSpacing: 2,
       decoration: TextDecoration.underline,
       fontStyle: FontStyle.italic,

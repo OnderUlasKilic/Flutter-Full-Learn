@@ -9,25 +9,23 @@ class StatelessLearn extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         body: Column(children: [
-          TitleTextWidget(text: "${veli}"),
-          const _emptyBox(),
+          TitleTextWidget(text: veli),
+          const _EmptyBox(),
           const TitleTextWidget(text: "veli2"),
-          const _emptyBox(),
+          const _EmptyBox(),
           const TitleTextWidget(text: "veli3"),
-          const _emptyBox(),
+          const _EmptyBox(),
           const TitleTextWidget(text: "veli4"),
-          const _emptyBox(),
+          const _EmptyBox(),
           const TitleTextWidget(text: "veli5"),
           const CustomContainer(),
-          const _emptyBox(),
+          const _EmptyBox(),
         ]));
   }
 }
 
-class _emptyBox extends StatelessWidget {
-  const _emptyBox({
-    super.key,
-  });
+class _EmptyBox extends StatelessWidget {
+  const _EmptyBox();
 
   @override
   Widget build(BuildContext context) {
