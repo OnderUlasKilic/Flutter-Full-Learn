@@ -49,15 +49,33 @@ class MyApp extends StatelessWidget {
           colorScheme: ThemeData.dark().copyWith().colorScheme.copyWith(
                 error: ColorsItems().sulu,
               ),
+          textSelectionTheme: const TextSelectionThemeData(
+              selectionColor: Colors.red,
+              cursorColor: Colors.green,
+              selectionHandleColor: Colors.black),
+          inputDecorationTheme: const InputDecorationTheme(
+            filled: true,
+            fillColor: Colors.white,
+            iconColor: Colors.red,
+            labelStyle: TextStyle(color: Colors.lime),
+            border: OutlineInputBorder(),
+            floatingLabelStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
 
           // colorScheme.error: colorsitems.sulu,
+
+          textTheme: const TextTheme(titleMedium: TextStyle(color: Colors.red)),
           appBarTheme: const AppBarTheme(
             centerTitle: true,
             systemOverlayStyle: SystemUiOverlayStyle.light,
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const TextFieldLearn(),
+      home: TextFieldLearn(),
     );
   }
 }
