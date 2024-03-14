@@ -22,6 +22,8 @@ import 'package:flutter_full_learn/101/statefull_life_cycle.dart';
 import 'package:flutter_full_learn/101/stateless_learn.dart';
 import 'package:flutter_full_learn/101/text_field_learn.dart';
 import 'package:flutter_full_learn/101/text_learn_view.dart';
+import 'package:flutter_full_learn/demos/color_demos_view.dart';
+import 'package:flutter_full_learn/demos/color_life_cycle_view.dart';
 import 'package:flutter_full_learn/demos/note_demos_view.dart';
 import 'package:flutter_full_learn/demos/stack_demo_view.dart';
 
@@ -46,18 +48,36 @@ class MyApp extends StatelessWidget {
           cardTheme: CardTheme(
             shape: ProjectMargin.roundedRectangleBorder,
           ),
-          colorScheme: ThemeData.dark().copyWith().colorScheme.copyWith(
+          colorScheme: ThemeData.dark().colorScheme.copyWith(
                 error: ColorsItems().sulu,
               ),
+          textSelectionTheme: const TextSelectionThemeData(
+              selectionColor: Colors.red,
+              cursorColor: Colors.green,
+              selectionHandleColor: Colors.black),
+          inputDecorationTheme: const InputDecorationTheme(
+            filled: true,
+            fillColor: Colors.white,
+            iconColor: Colors.red,
+            labelStyle: TextStyle(color: Colors.lime),
+            border: OutlineInputBorder(),
+            floatingLabelStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
 
           // colorScheme.error: colorsitems.sulu,
+
+          textTheme: const TextTheme(titleMedium: TextStyle(color: Colors.red)),
           appBarTheme: const AppBarTheme(
             centerTitle: true,
             systemOverlayStyle: SystemUiOverlayStyle.light,
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const TextFieldLearn(),
+      home: const ColorLifeCycleView(),
     );
   }
 }
