@@ -20,7 +20,7 @@ class _ColorDemosState extends State<ColorDemos> {
   @override
   void initState() {
     super.initState();
-    _backgroundColor = widget.initialColor;
+    _backgroundColor = widget.initialColor ?? Colors.transparent;
   }
 
   @override
