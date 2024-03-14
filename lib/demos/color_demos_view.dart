@@ -15,12 +15,12 @@ class ColorDemos extends StatefulWidget {
 }
 
 class _ColorDemosState extends State<ColorDemos> {
-  Color? _backgroundColor = Colors.transparent;
+  Color? _backgroundColor;
 
   @override
   void initState() {
     super.initState();
-    _backgroundColor = widget.initialColor ?? Colors.transparent;
+    _backgroundColor = widget.initialColor;
   }
 
   @override
@@ -76,7 +76,9 @@ class _ColorContainer extends StatelessWidget {
     super.key,
     required this.color,
   });
+
   final Color color;
+
   @override
   Widget build(BuildContext context) {
     return Container(
