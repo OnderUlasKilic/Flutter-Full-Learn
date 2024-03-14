@@ -1,4 +1,4 @@
 class LanguageItems {
-  static const wellcomeTitle = "Merhaba";
+  static const welcomeTitle = "Merhaba";
   static const mailTitle = "Mail";
 }

@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           cardTheme: CardTheme(
             shape: ProjectMargin.roundedRectangleBorder,
           ),
-          colorScheme: ThemeData.dark().copyWith().colorScheme.copyWith(
+          colorScheme: ThemeData.dark().colorScheme.copyWith(
                 error: ColorsItems().sulu,
               ),
           textSelectionTheme: const TextSelectionThemeData(

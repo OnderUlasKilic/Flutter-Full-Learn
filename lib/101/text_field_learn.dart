@@ -3,16 +3,30 @@ import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/product/language/language_items.dart';
 
 class TextFieldLearn extends StatefulWidget {
-  TextFieldLearn({super.key});
-
-  FocusNode focusNodeTextFieldOne = FocusNode();
-  FocusNode focusNodeTextFieldTwo = FocusNode();
+  const TextFieldLearn({super.key});
 
   @override
   State<TextFieldLearn> createState() => _TextFieldLearnState();
 }
 
 class _TextFieldLearnState extends State<TextFieldLearn> {
+  late final FocusNode focusNodeTextFieldOne;
+  late final FocusNode focusNodeTextFieldTwo;
+
+  @override
+  void initState() {
+    super.initState();
+    focusNodeTextFieldOne = FocusNode();
+    focusNodeTextFieldTwo = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    focusNodeTextFieldOne.dispose();
+    focusNodeTextFieldTwo.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,13 +48,13 @@ class _TextFieldLearnState extends State<TextFieldLearn> {
               },
               keyboardType: TextInputType.emailAddress,
               autofillHints: const [AutofillHints.email],
-              focusNode: widget.focusNodeTextFieldOne,
-              inputFormatters: [TextProjectInputFormmater()._formmatter],
+              focusNode: focusNodeTextFieldOne,
+              inputFormatters: [TextProjectInputFormatter()._formmatter],
               textInputAction: TextInputAction.next,
               decoration: _InputDecarotor().emailInput,
             ),
             TextFormField(
-              focusNode: widget.focusNodeTextFieldTwo,
+              focusNode: focusNodeTextFieldTwo,
               minLines: 2,
               maxLines: 4,
             ),
@@ -67,7 +81,7 @@ class _AnimatedContainer extends StatelessWidget {
   }
 }
 
-class TextProjectInputFormmater {
+class TextProjectInputFormatter {
   final _formmatter = TextInputFormatter.withFunction((oldValue, newValue) {
     if (newValue.text.contains("a")) {
       return oldValue;

@@ -19,7 +19,7 @@ class _StatefullLearnState extends State<StatefullLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(LanguageItems.wellcomeTitle)),
+      appBar: AppBar(title: const Text(LanguageItems.welcomeTitle)),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
